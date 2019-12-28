@@ -7,7 +7,7 @@ An implementation of the [Porter2 Stemmer](https://snowballstem.org/algorithms/e
 
 Port: synonym: harbor
 
-Stem: synonym: arbor (More a suffix than a stem, but close enough.)
+Arbor: synonym: stem (More a suffix than a stem, but close enough.)
 
 Install harbor binary to use on a file
 
