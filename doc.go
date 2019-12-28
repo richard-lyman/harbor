@@ -9,13 +9,13 @@ Port: synonym: harbor
 
 Stem: synonym: arbor (More a suffix than a stem, but close enough.)
 
-### Install harbor binary to use on a file
+Install harbor binary to use on a file
 
 Assuming you already have Golang installed, run the following command to generate an executable named ```harbor``` in whatever directory you're in:
 
 	GOBIN=`pwd` go get github.com/richard-lyman/harbor/cmd/harbor
 
-### Use the harbor library in a Golang project
+Use the harbor library in a Golang project
 
 Assuming you're using Golang modules, the following is an example of using the harbor library in a Golang project:
 
