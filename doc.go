@@ -3,6 +3,8 @@
 // license that can be found in the LICENSE file.
 
 /*
+Description
+
 An implementation of the [Porter2 Stemmer](https://snowballstem.org/algorithms/english/stemmer.html).
 
 Port: synonym: harbor
