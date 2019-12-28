@@ -1,4 +1,7 @@
 # harbor
+
+[![GoDoc](https://godoc.org/github.com/richard-lyman/harbor?status.svg)](https://godoc.org/github.com/richard-lyman/harbor)
+
 An implementation of the [Porter2 Stemmer](https://snowballstem.org/algorithms/english/stemmer.html).
 
 Port: synonym: harbor
