@@ -5,13 +5,31 @@
 package harbor
 
 import (
+	"bytes"
+	"io/ioutil"
 	"testing"
 )
 
 func TestStem(t *testing.T) {
-	s := "Stem Source"
-	d := "stem source"
-	if out := Stem(s); out != d {
-		t.Errorf("Stem(%q) = %q, want %q", s, out, d)
+	output, err := ioutil.ReadFile("test_data/output.txt")
+	if err != nil {
+		panic("Failed to read output file" + err.Error())
 	}
+	voc, err := ioutil.ReadFile("test_data/voc.txt")
+	if err != nil {
+		panic("Failed to read voc file" + err.Error())
+	}
+	outputWords := bytes.Fields(output)
+	vocWords := bytes.Fields(voc)
+	total := len(vocWords)
+	failures := 0
+	for i, word := range vocWords {
+		s := Stem(word)
+		expected := outputWords[i]
+		if !bytes.Equal(s, expected) {
+			failures += 1
+			t.Errorf("Failed (%d): Stem(%s) != %s", i, s, expected)
+		}
+	}
+	t.Logf("%.0f%% words passing (%d failures from %d words)", 100.0-(float64(failures)/float64(total))*100.0, failures, total)
 }
