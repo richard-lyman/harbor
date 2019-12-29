@@ -10,5 +10,5 @@ import (
 )
 
 func main() {
-	fmt.Println(harbor.Stem("Stem Source"))
+	fmt.Printf("%s\n", harbor.Stem([]byte("complicating")))
 }
