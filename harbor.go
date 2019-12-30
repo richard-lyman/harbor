@@ -5,8 +5,11 @@
 package harbor
 
 import (
+	"bufio"
 	"bytes"
+	"io"
 	"regexp"
+	"unicode"
 )
 
 var c = regexp.MustCompile(`[^aeiou]`)
@@ -140,4 +143,45 @@ var list3 = map[string]string{
 	"ical":  "ic",
 	"ful":   "",
 	"ness":  "",
+}
+
+func StemMap(inr io.Reader) (map[string][]string, error) {
+	in := bufio.NewReader(inr)
+	result := map[string][]string{}
+	var tmp bytes.Buffer
+	for {
+		r, n, err := in.ReadRune()
+		if n > 0 && unicode.IsLetter(r) {
+			tmp.WriteRune(r)
+		} else { // Either we read something that wasn't a letter, or we read nothing
+			if tmp.Len() > 0 {
+				tmptmp := make([]byte, tmp.Len())
+				copy(tmptmp, tmp.Bytes())
+				word := string(tmptmp)
+				stem := string(Stem(tmptmp))
+				_, exists := result[stem]
+				if !exists {
+					result[stem] = []string{}
+				}
+				alreadyTracked := false
+				for _, v := range result[stem] {
+					if v == word {
+						alreadyTracked = true
+						break
+					}
+				}
+				if !alreadyTracked {
+					result[stem] = append(result[stem], word)
+				}
+				tmp.Reset()
+			}
+		}
+		if err == io.EOF {
+			return result, nil
+		}
+		if err != nil && err != io.EOF {
+			return nil, err
+		}
+	}
+	return nil, io.ErrNoProgress
 }
