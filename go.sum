@@ -1,5 +1,0 @@
-github.com/gojp/goreportcard v0.0.0-20191001233754-41818f5fd295 h1:bxKAVMPMl+mdSoSbVPNExWq/ix0G2WX9h5QyAWtjAoY=
-github.com/gojp/goreportcard v0.0.0-20191001233754-41818f5fd295/go.mod h1:/DA2Xpp+OaR3EHafQSnT9SKOfbG2NPQR/qp6Qr8AgIw=
-github.com/richard-lyman/harbor v0.0.0-20191228183837-946efb839bed/go.mod h1:56+ekIu4csKDprGsdu+kjku8BjcAk296fQ7x9EnURxU=
-github.com/richard-lyman/harbor/cmd/harbor v0.0.0-20191228184415-e9c44f3e38a0 h1:mq2/iMULxkoAU7+RfC+KrPAIgvFxF5tkcJk5ukaP0mU=
-github.com/richard-lyman/harbor/cmd/harbor v0.0.0-20191228184415-e9c44f3e38a0/go.mod h1:ZTP4U1qy44IKxvb/oP1UtO0cVvOG/rclZRtoEK2YubM=
