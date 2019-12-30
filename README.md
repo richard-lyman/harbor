@@ -16,6 +16,12 @@ Assuming you already have Golang installed, run the following command to generat
 GOBIN=`pwd` go get github.com/richard-lyman/harbor/cmd/harbor
 ```
 
+For information on how to use the harbor command run:
+
+```
+./harbor -h
+```
+
 ### Use the harbor library in a Golang project
 
 Assuming you're using Golang modules, the following is an example of using the harbor library in a Golang project:
