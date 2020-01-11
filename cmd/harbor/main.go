@@ -44,7 +44,7 @@ The harbor command has very few options.
       ./harbor -f "plain" file.txt
   - "compact": This provides each Stem separated by a space:
       ./harbor -f "compact" file.txt
-  - "csv": Stem and Word use the string %%q format: https://golang.org/pkg/fmt/:
+  - "csv": Stem and Word use the string percent q format: https://golang.org/pkg/fmt/:
       ./harbor -f "csv" file.txt
   - "json": This uses a template func 'inner', which is available in any format:
       ./harbor -f "json" file.txt
